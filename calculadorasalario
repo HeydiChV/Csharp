@@ -1,0 +1,62 @@
+using System;
+
+namespace CalculadoraSalario
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaración de variables
+            double horasTrabajadas, tasaPorHora, salarioSemanal;
+            bool esEmpleadoDestacado;
+            const double BONO_DESTACADO = 50.0;
+
+            // Solicitar entrada al usuario
+            Console.Write("Ingrese las horas trabajadas: ");
+            horasTrabajadas = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Ingrese la tasa de pago por hora: ");
+            tasaPorHora = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("¿Es el empleado destacado? (Sí/No): ");
+            string respuesta = Console.ReadLine();
+            esEmpleadoDestacado = respuesta.ToLower() == "sí" || respuesta.ToLower() == "si";
+
+            // Calcular salario semanal
+            salarioSemanal = horasTrabajadas * tasaPorHora;
+
+            // Aplicar bono si el empleado es destacado
+            if (esEmpleadoDestacado)
+            {
+                salarioSemanal += BONO_DESTACADO;
+            }
+
+            // Mostrar resultado
+            Console.WriteLine($"El salario semanal es: {salarioSemanal:C}");
+
+            // Usar un ciclo while para contar hasta 5
+            int contador = 1;
+            while (contador <= 5)
+            {
+                Console.WriteLine($"Contador while: {contador}");
+                contador++;
+            }
+
+            // Usar un ciclo for para contar desde 1 hasta 5
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine($"Contador for: {i}");
+            }
+
+            // Usar un ciclo do-while para contar desde 1 hasta 5
+            int j = 1;
+            do
+            {
+                Console.WriteLine($"Contador do-while: {j}");
+                j++;
+            } while (j <= 5);
+
+            Console.ReadLine();
+        }
+    }
+}
